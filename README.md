@@ -10,7 +10,7 @@ The goal of the project is to make a lightweight neural network in Python for re
 - **Control Group** 1024, 2<sup>10</sup>
 2. **DV:** 
 ```
-accuracy/(accuracy + model_time)
+accuracy/(accuracy + (model_time/2))
 ```
 
 ## How I did the experiment is available in the methods.md file.
