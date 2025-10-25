@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-data = pd.read_csv("learning/tiny_data.csv")
+data = pd.read_csv("Learning/tiny_data.csv")
 images = data[['pixel1', 'pixel2', 'pixel3']].to_numpy()
 images = images / 255.0
 labels = data['label'].to_numpy()
