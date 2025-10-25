@@ -1,6 +1,8 @@
 # Science Fair 2025
 ### By Om Kanabar
 This is my project for CPS science fair 2025.
+## LICENSE NOTE
+Please read the license to know what you can and cannot do with this project. ALL VIOLATIONS OF THE LICENSE ARE ENFORCEABLE UNDER FEDERAL COPYRIGHT LAW.
 ## Goal of Project
 The goal of the project is to make a lightweight neural network in Python for recognizing handwritten charecters (A-Z, 0-9). It will be trained on the EMNIST Mixed dataset.
 ---
@@ -15,6 +17,3 @@ accuracy / (accuracy + (0.75 * model_time))
 
 ## How I did the experiment is available in the methods.md file.
 
-## LICENSE NOTE
-
-Please read the license BEFORE making any copies.
