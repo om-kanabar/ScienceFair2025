@@ -26,11 +26,12 @@ with open("Data/emnist-byclass-mapping.txt", "r") as f:
         label_index, ascii_code = map(int, line.strip().split())
         mapping[label_index] = chr(ascii_code)
 
+rows = get_int("Rows (default 3): ", 3)
+cols = get_int("Columns (default 3): ", 3)
+
 for index, example in enumerate(random_samples):
     img = example['image'].numpy().squeeze()
     img = img / 255.0
-    rows = get_int("Rows (default 3): ", 3)
-    cols = get_int("Columns (default 3): ", 3)
     plt.subplot(rows, cols, index + 1)
     plt.imshow(img, cmap='gray')
     label_value = example['label'].numpy()
