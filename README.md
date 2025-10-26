@@ -33,7 +33,7 @@ Before running the project, make sure you have Python 3 installed.
 
 
 ## Goal of Project
-The goal of the project is to make a lightweight neural network in Python for recognizing handwritten charecters (A-Z, 0-9). It will be trained on the EMNIST Mixed dataset.
+The goal of the project is to make a lightweight neural network in Python for recognizing handwritten characters (A-Z, 0-9). It will be trained on the EMNIST Byclass & EMINST Balanced datasets.
 
 ---
 ## Overview
