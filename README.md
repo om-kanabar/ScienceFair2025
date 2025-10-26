@@ -42,7 +42,7 @@ The goal of the project is to make a lightweight neural network in Python for re
 - **Control Group** 1024; 2<sup>10</sup>
 2. **DV:** 
 ```
-accuracy / (accuracy + (0.75 * model_time))
+accuracy / (accuracy + (0.75 * speed)
 ```
 
 
