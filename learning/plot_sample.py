@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
-import numpy as np
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 import tensorflow_datasets as tfds
 import random
 
@@ -28,6 +29,9 @@ with open("Data/emnist-byclass-mapping.txt", "r") as f:
 
 rows = get_int("Rows (default 3): ", 3)
 cols = get_int("Columns (default 3): ", 3)
+
+fig = plt.figure()
+fig.canvas.manager.full_screen_toggle()
 
 for index, example in enumerate(random_samples):
     img = example['image'].numpy().squeeze()
