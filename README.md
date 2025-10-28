@@ -2,9 +2,6 @@
 ### By Om Kanabar
 ## LICENSE NOTE
 Please review the LICENSE file to understand the terms and conditions for using this project.
-## ERROR NOTE
-
-If any errors are found please create an issue at: https://github.com/om-kanabar/ScienceFair2025/issues/ if you are not able to do that please contact Om Kanabar at https://omkanabar.com/contact 
 
 ## TOOLS NOTE
 This project was made using [Visual Studio Code](https://code.visualstudio.com/) on **MacOS** *Tahoe (26.1)* with a **2022** *M2* MacBookAir with 16 GB of RAM.
@@ -33,10 +30,15 @@ The goal of the project is to make a lightweight convoluted neural network in Py
 2. **DV:** Model Performance Score = `accuracy / (accuracy + (0.75 • inference_time))`
 
 ---
+# Instructions for Rerunning the Project
+
+## ERROR NOTE
+
+If any errors are found please create an issue at: https://github.com/om-kanabar/ScienceFair2025/issues/ if you are not able to do that please contact Om Kanabar at https://omkanabar.com/contact 
 
 ## Before Starting 
 
-### Installing Requirements Before Starting Project (For redoing the experiment)
+### Installing Requirements Before Starting Project
 
 Before running the project, make sure you have Python 3 installed.
 
@@ -57,10 +59,10 @@ Before running the project, make sure you have Python 3 installed.
 
 1. Open the terminal **in the project folder**:
    - In Finder, right‑click the project folder and select **"New Terminal at Folder"**, *or*
-   - Open Terminal and type `cd` , then **drag the ScienceFair2025 folder into the Terminal window** and press Enter.```
+   - Open Terminal and type `cd` , then **drag the ScienceFair2025 folder into the Terminal window** and press Enter.
 
 2. Run the file 
-#### (Images can be flipped and rotated. This is **normal** and not an issue)
+#### (Images can be flipped and rotated. This is *normal* and not an issue)
 
 ```python3 Scripts/datacheck.py```
 
@@ -68,3 +70,4 @@ Before running the project, make sure you have Python 3 installed.
 
 4. Follow in-terminal instructions
 
+### 
