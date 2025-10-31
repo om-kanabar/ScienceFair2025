@@ -49,7 +49,7 @@ Before running the project, make sure you have Python 3 installed.
 2. Create and activate a virtual environment (optional but recommended):
 
    ```python -m venv venv```
-   ```.source venv/bin/activate```
+   ```source venv/bin/activate```
 
 3. Install all required packages:
 
