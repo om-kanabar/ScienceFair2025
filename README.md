@@ -4,7 +4,7 @@
 Please review the LICENSE file to understand the terms and conditions for using this project.
 
 ## TOOLS NOTE
-This project was made using [Visual Studio Code](https://code.visualstudio.com/) on **MacOS** *Tahoe (26.1)* with a **2022** *M2* MacBookAir with 16 GB of RAM.
+This project was made using [Visual Studio Code](https://code.visualstudio.com/) on **MacOS** *Tahoe (26.1)* with a **2022** *M2* MacBookAir with 16 GB of RAM, times may vary with different computers.
 
 ---
 ## A bit about the structure of this project
@@ -14,6 +14,7 @@ This project was made using [Visual Studio Code](https://code.visualstudio.com/)
 
 ```ScienceFair2025/Scripts```, where the non-neural-network essential scripts are stored.
 
+```ScienceFair2025/Models```, where the best models are stored. 
 ---
 
 ## Goal of Project
