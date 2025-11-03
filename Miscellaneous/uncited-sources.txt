@@ -10,3 +10,4 @@ https://pytorch.org/tutorials/beginner/blitz/neural_networks_tutorial.html
 https://www.geeksforgeeks.org/machine-learning/neural-networks-a-beginners-guide/
 https://www.ibm.com/think/topics/neural-networks
 https://www.kaggle.com/datasets/crawford/emnist?resource=download 
+https://medium.com/@abhishekjainindore24/all-about-convolutions-kernels-features-in-cnn-c656616390a1 
