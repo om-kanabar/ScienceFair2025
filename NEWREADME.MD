@@ -5,7 +5,12 @@
 
 ## A few key terms
 
-1. "Convolution kernels, also known as filters, are small matrices used for the convolution operation. These kernels slide across the input data, performing element-wise multiplication with the corresponding pixels and producing a feature map that highlights specific patterns or features in the input." Source: [Medium](https://medium.com/@abhishekjainindore24/all-about-convolutions-kernels-features-in-cnn-c656616390a1) 
+1. **Neural Network**: A neural network is a computer program that is based on the human brain. This works by learning patterns from data. A neural network modifies its connections to learn. A neural network can recognize images or understand speech, or even make a prediction.
+
+![Neural Network Visualization](https://www.ibm.com/content/dam/connectedassets-adobe-cms/worldwide-content/cdp/cf/ul/g/3a/b8/ICLH_Diagram_Batch_01_03-DeepNeuralNetwork.png "Neural Network Visualization") Source: IBM
+
+2. **Convolutional Neural Network (CNN)**: A type of neural network that is more accurate 
+
 
 ## A bit about this project
 
