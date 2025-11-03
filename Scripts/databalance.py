@@ -3,8 +3,11 @@
 import tensorflow_datasets as tfds
 import numpy as np
 import random
+from rich.console import Console
 
-print("Starting data balancing script...")
+console = Console()
+
+console.print("[bold cyan]Starting data balancing script...[/bold cyan]")
 
 # Load the EMNIST ByClass training dataset with labels and images
 train_dataset = tfds.load('emnist/byclass', split='train', as_supervised=True)
@@ -33,9 +36,9 @@ for char in images_by_class:
     if current_count < 20000:
         remaining = target - current_count
         images_by_class[char].extend(random.choices(images_by_class[char], k = remaining))
-    print(f"Oversampled class '{char}' to {len(images_by_class[char])} samples.")
+    console.print(f"[yellow]Oversampled class '{char}' to {len(images_by_class[char])} samples.[/yellow]")
 
-print("Data balancing script completed.")
+console.print("[green]Data balancing script completed successfully![/green]")
 
 # Flatten images and labels
 all_images = []
@@ -51,4 +54,4 @@ all_labels = np.array(all_labels)
 
 # Save to compressed NPZ file
 np.savez_compressed('Data/emnist-byclass-balanced.npz', images=all_images, labels=all_labels)
-print("Balanced dataset saved to Data/emnist-byclass-balanced.npz")
+console.print("[bold green]Balanced dataset saved to Data/emnist-byclass-balanced.npz[/bold green]")

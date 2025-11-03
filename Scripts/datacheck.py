@@ -1,6 +1,10 @@
 # This file's purpose is to check the data to make sure that it is not coruppted.
 
-print("Loading EMNIST dataset... Please wait.")
+from rich.console import Console
+
+console = Console()
+
+console.print("[bold cyan]Loading EMNIST dataset... Please wait.[/bold cyan]")
 
 import matplotlib.pyplot as plt
 import os
@@ -36,11 +40,15 @@ else:
             label_index, ascii_code = map(int, line.strip().split())
             mapping[label_index] = chr(ascii_code)
 
+console.print("[green]Dataset loaded successfully.[/green]")
+
 rows = get_int("Rows (default 3): ", 3)
 cols = get_int("Columns (default 3): ", 3)
 
 fig = plt.figure()
 fig.canvas.manager.full_screen_toggle()
+
+console.print("[bold yellow]Displaying sample images...[/bold yellow]")
 
 if source == '1':
     for index, (img, label) in enumerate(random_samples):
@@ -63,3 +71,5 @@ else:
 
 plt.tight_layout(pad=1.5)
 plt.show()
+
+console.print("[bold green]Image display complete![/bold green]")
