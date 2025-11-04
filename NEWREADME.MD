@@ -5,9 +5,13 @@
 
 ## A few key terms
 
-1. **Neural Network**: A neural network is a computer program that is based on the human brain. This works by learning patterns from data. A neural network modifies its connections to learn. A neural network can recognize images or understand speech, or even make a prediction.
+1. **Neural Network**: A neural network is a computer program that is based on the human brain. This works by learning patterns from data. A neural network modifies its connections to learn. A neural network can recognize images or understand speech, or even make a prediction. Each hidden layer in the neural network will perform a mathematical operation to help it make its prediction. (See Fig 1)
 
-![Neural Network Visualization](https://www.ibm.com/content/dam/connectedassets-adobe-cms/worldwide-content/cdp/cf/ul/g/3a/b8/ICLH_Diagram_Batch_01_03-DeepNeuralNetwork.png "Neural Network Visualization") Source: IBM
+![Neural Network Visualization](Assets/NeuralNetworkVisualization.png "Neural Network Visualization")
+---
+Fig. 1 Neural Network Visualization. Source: Om Kanabar
+
+---
 
 2. **Convolutional Neural Network (CNN)**: A type of neural network that is more accurate 
 

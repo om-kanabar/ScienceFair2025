@@ -40,17 +40,15 @@ for char in images_by_class:
 
 console.print("[green]Data balancing script completed successfully![/green]")
 
+
 # Flatten images and labels
 all_images = []
 all_labels = []
-for char, imgs in images_by_class.items():
+for label_index, char in mapping.items():
+    imgs = images_by_class[char]
     for img in imgs:
         all_images.append(img)
-        all_labels.append(char)
-
-# Convert to NumPy arrays
-all_images = np.array(all_images)
-all_labels = np.array(all_labels)
+        all_labels.append(label_index)  # use numeric label instead of char
 
 # Save to compressed NPZ file
 np.savez_compressed('Data/emnist-byclass-balanced.npz', images=all_images, labels=all_labels)

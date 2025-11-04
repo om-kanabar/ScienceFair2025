@@ -3,3 +3,8 @@ __pycache__/
 *.pyc
 
 Data/*.npz
+Models/
+*.h5
+*.pt
+*.pkl
+*.joblib

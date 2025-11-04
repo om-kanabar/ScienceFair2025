@@ -94,15 +94,23 @@ console.print(f"[green]Training samples: {len(x_train)}, Validation samples: {le
 
 console.print("[bold cyan]Training started...[/bold cyan]")
 
+# Add early stopping callback to prevent overfitting
+early_stopping = keras.callbacks.EarlyStopping(
+    monitor='val_loss',      # what to watch
+    patience=3,              # stop if no improvement for 3 epochs
+    restore_best_weights=True  # revert to the best model
+)
+
 # Trains the neural network
 
 history = model.fit(
-    x_train,        # training images
-    y_train,        # training labels
-    validation_data=(x_val, y_val),  # validation set for checking generalization
-    epochs=10,     # how many passes over the dataset
-    batch_size=64  # how many images per training step
-) 
+    x_train,
+    y_train,
+    validation_data=(x_val, y_val),
+    epochs=20,            # maximum number of epochs
+    batch_size=64,
+    callbacks=[early_stopping]
+)
 
 console.print("[bold green]Training complete![/bold green]")
 
