@@ -24,9 +24,26 @@ This project deals with how the kernel size changes affect the accuracy of CNN's
 ## Objective/Purpose
 The goal of this project is to investigate how convolutional kernel size affects the accuracy and learning efficiency of CNNs trained on handwritten character data
 
+## Variables
+
+### **IV:** Kernel Size
+#### **Experimental Group:** 2x2, 4x4, 5x5
+#### **Control Group**: 3x3
+
+### **DV:** Accuracy (Number of Images Identified Correctly/Total Number of Images)
+
 ## Purpose Statment
 
 #### How does convolutional kernel size affect handwritten charecter recognition accuracy?
 
 ## Hypothesis
 #### If the kernel size of a convolutional neural network is 4x4, it will achieve the highest accuracy because smaller kernels capture very local features but may miss larger patterns, while larger kernels can blur finer details.
+
+
+## Materials (Doing Later)
+
+## Instructions
+
+1. Download the repository by going to https://github.com/om-kanabar/ScienceFair2025/archive/refs/heads/main.zip
+2. Unzip the file by clicking on it
+3. 
