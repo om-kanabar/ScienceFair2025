@@ -2,7 +2,9 @@ venv/
 __pycache__/
 *.pyc
 
-Scripts/Data/*.npz
+project_structure.txt
+
+Data/*.npz
 Models/
 *.h5
 *.pt

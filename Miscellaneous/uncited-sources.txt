@@ -13,3 +13,6 @@ https://www.kaggle.com/datasets/crawford/emnist?resource=download
 https://medium.com/@abhishekjainindore24/all-about-convolutions-kernels-features-in-cnn-c656616390a1 
 https://www.ibm.com/think/topics/convolutional-neural-networks
 https://www.geeksforgeeks.org/deep-learning/kernels-filters-in-convolutional-neural-network/
+http://yann.lecun.com/exdb/publis/pdf/lecun-01a.pdf
+https://www.tensorflow.org/tutorials/images/cnn
+https://medium.com/%40rekalantar/receptive-fields-in-deep-convolutional-networks-43871d2ef2e9

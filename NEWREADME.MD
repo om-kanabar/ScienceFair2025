@@ -19,4 +19,14 @@ Fig. 1 Neural Network Visualization.
 
 ## A bit about this project
 
-This project deals with how the kernel size changes affect the accuracy of CNN's which are made for recognizing handwritten characters using the EMINST dataset. This experiment intends to find out how different kernel sizes influence learning efficiency and classification performances since several models will be trained with different kernel sizes.
+This project deals with how the kernel size changes affect the accuracy of CNN's which are made for recognizing handwritten characters using the EMINST byclass dataset. This experiment intends to find out how different kernel sizes influence learning efficiency and classification performances since several models will be trained with different kernel sizes.
+
+## Objective/Purpose
+The goal of this project is to investigate how convolutional kernel size affects the accuracy and learning efficiency of CNNs trained on handwritten character data
+
+## Purpose Statment
+
+##### How does convolutional kernel size affect handwritten charecter recognition accuracy?
+
+## Hypothesis
+##### If the kernel size of a convolutional neural network is 4x4, it will achieve the highest accuracy because smaller kernels capture very local features but may miss larger patterns, while larger kernels can blur finer details.
