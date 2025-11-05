@@ -12,3 +12,4 @@ https://www.ibm.com/think/topics/neural-networks
 https://www.kaggle.com/datasets/crawford/emnist?resource=download 
 https://medium.com/@abhishekjainindore24/all-about-convolutions-kernels-features-in-cnn-c656616390a1 
 https://www.ibm.com/think/topics/convolutional-neural-networks
+https://www.geeksforgeeks.org/deep-learning/kernels-filters-in-convolutional-neural-network/

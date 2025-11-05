@@ -9,13 +9,14 @@
 
 ![Neural Network Visualization](Assets/NeuralNetworkVisualization.png "Neural Network Visualization")
 ---
-Fig. 1 Neural Network Visualization. Source: Om Kanabar
+Fig. 1 Neural Network Visualization.
 
 ---
 
-2. **Convolutional Neural Network (CNN)**: A type of neural network that is more accurate 
+2. **Convolutional Neural Network (CNN)**: A type of neural network that is designed to for images. It is preferred for image tasks due to it processing images using layers that detect patterns like edges, shapes, and textures.
 
+3. **Kernel**: A small array of numbers that is also known as a filter, it moves across an image in a CNN in order to spot patterns or edges, or shapes. This kernel’s size will determine just how much of an image is processed at one given point in order to detect detailed or large features.
 
 ## A bit about this project
 
-This project deals with how the kernel size changes affect the accuracy of Convolutional Neural Networks, which are made for recognizing handwritten characters using the EMINST dataset. This experiment intends to find out how different kernel sizes influence learning efficiency and classification performances since several models will be trained with different kernel sizes.
+This project deals with how the kernel size changes affect the accuracy of CNN's which are made for recognizing handwritten characters using the EMINST dataset. This experiment intends to find out how different kernel sizes influence learning efficiency and classification performances since several models will be trained with different kernel sizes.
