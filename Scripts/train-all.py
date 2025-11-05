@@ -4,6 +4,9 @@
 import subprocess
 import time
 from rich.console import Console
+import os
+script_dir = os.path.dirname(os.path.abspath(__file__))
+train_model_path = os.path.join(script_dir, "train-model.py")
 
 console = Console()
 
@@ -18,7 +21,7 @@ for kernel in kernel_sizes:
         
         # Run train-model.py and pass the kernel size as input
         process = subprocess.run(
-            ["python3", "Scripts/train-model.py"],
+            ["python3", train_model_path],
             input=str(kernel) + "\n",  # feed kernel size to input()
             text=True
         )

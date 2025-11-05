@@ -8,6 +8,8 @@ console.print("[bold cyan]Loading EMNIST dataset... Please wait.[/bold cyan]")
 
 import matplotlib.pyplot as plt
 import os
+script_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.abspath(os.path.join(script_dir, ".."))
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 import tensorflow_datasets as tfds
 import random
@@ -19,7 +21,8 @@ def get_int(prompt, default):
 
 source = input("Enter 0 for base EMNIST, 1 for processed balanced dataset: ").strip()
 if source == '1':
-    data = np.load("Data/emnist-byclass-balanced.npz")
+    data_path = os.path.join(project_root, "Data", "emnist-byclass-balanced.npz")
+    data = np.load(data_path)
     images = data['images']
     labels = data['labels']
     num_images = get_int("How many images? (default 9): ", 9)
@@ -34,8 +37,9 @@ else:
     builder = tfds.builder('emnist/byclass')
     names = builder.info.features['label'].names
 
+    mapping_path = os.path.join(project_root, "Data", "emnist-byclass-mapping.txt")
     mapping = {}
-    with open("Data/emnist-byclass-mapping.txt", "r") as f:
+    with open(mapping_path, "r") as f:
         for line in f:
             label_index, ascii_code = map(int, line.strip().split())
             mapping[label_index] = chr(ascii_code)

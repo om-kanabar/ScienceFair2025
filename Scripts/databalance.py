@@ -1,5 +1,6 @@
 # This script balances the neural network's training data.
 
+import os
 import tensorflow_datasets as tfds
 import numpy as np
 import random
@@ -9,12 +10,16 @@ console = Console()
 
 console.print("[bold cyan]Starting data balancing script...[/bold cyan]")
 
+script_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.abspath(os.path.join(script_dir, ".."))
+mapping_path = os.path.join(project_root, "Data", "emnist-byclass-mapping.txt")
+
 # Load the EMNIST ByClass training dataset with labels and images
 train_dataset = tfds.load('emnist/byclass', split='train', as_supervised=True)
 
 # Map the labels to actual characters using the provided mapping file
 mapping = {}
-with open("Data/emnist-byclass-mapping.txt", "r") as f:
+with open(mapping_path, "r") as f:
     for line in f:
         label_index, ascii_code =  map(int, line.split())
         mapping[label_index] = chr(ascii_code)
@@ -50,6 +55,6 @@ for label_index, char in mapping.items():
         all_images.append(img)
         all_labels.append(label_index)  # use numeric label instead of char
 
-# Save to compressed NPZ file
-np.savez_compressed('Data/emnist-byclass-balanced.npz', images=all_images, labels=all_labels)
+output_path = os.path.join(project_root, "Data", "emnist-byclass-balanced.npz")
+np.savez_compressed(output_path, images=all_images, labels=all_labels)
 console.print("[bold green]Balanced dataset saved to Data/emnist-byclass-balanced.npz[/bold green]")

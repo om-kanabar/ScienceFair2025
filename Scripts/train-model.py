@@ -12,6 +12,12 @@ import tensorflow as tf
 from tensorflow import keras
 import uuid
 from sklearn.model_selection import train_test_split
+import os
+script_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.abspath(os.path.join(script_dir, ".."))
+data_path = os.path.join(project_root, "Data", "emnist-byclass-balanced.npz")
+mapping_path = os.path.join(project_root, "Data", "emnist-byclass-mapping.txt")
+models_dir = os.path.join(project_root, "Models")
 
 console.print("[green]Packages imported successfully")
 
@@ -19,7 +25,7 @@ console.print("[green]Packages imported successfully")
 # Load the preprocessed EMNIST balanced dataset
 console.print("[bold cyan]Loading balanced EMNIST dataset...[/bold cyan]")
 
-data = np.load("Data/emnist-byclass-balanced.npz")
+data = np.load(data_path)
 train_images = data["images"]
 train_labels = data["labels"]
 
@@ -31,7 +37,7 @@ y = data["labels"]
 
 # Load label mapping (character to numeric index)
 mapping = {}
-with open("Data/emnist-byclass-mapping.txt", "r") as f:
+with open(mapping_path, "r") as f:
     for line in f:
         label_index, ascii_code = map(int, line.strip().split())
         mapping[chr(ascii_code)] = label_index
@@ -114,5 +120,7 @@ history = model.fit(
 
 console.print("[bold green]Training complete![/bold green]")
 
-model.save(f"Models/model_{kernel_size[0]}x{kernel_size[1]}_{unique_id}.keras")
+if not os.path.exists(models_dir):
+    os.makedirs(models_dir)
+model.save(os.path.join(models_dir, f"model_{kernel_size[0]}x{kernel_size[1]}_{unique_id}.keras"))
 console.print(f"[bold green]Model saved as model_{kernel_size[0]}x{kernel_size[1]}_{unique_id}.keras[/bold green]")

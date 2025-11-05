@@ -1,5 +1,10 @@
 # This file preprocess the data for the main experiment.
 
+import os
+
+script_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.abspath(os.path.join(script_dir, ".."))
+
 import tensorflow_datasets as tfds
 import collections
 import numpy as np
@@ -10,7 +15,8 @@ console = Console()
 source = input("Enter 0 for base EMNIST, 1 for processed balanced dataset emnist-byclass-balanced.npz: ")
 
 mapping = {}
-with open("Data/emnist-byclass-mapping.txt", "r") as f:
+mapping_path = os.path.join(project_root, "Data", "emnist-byclass-mapping.txt")
+with open(mapping_path, "r") as f:
     for line in f:
         label_index, ascii_code = map(int, line.strip().split())
         mapping[label_index] = chr(ascii_code)
@@ -24,7 +30,8 @@ if source == '0':
         counts[mapping[label]] += 1
 elif source == '1':
     console.print("[bold cyan]Using processed balanced dataset emnist-byclass-balanced.npz.[/bold cyan]")
-    data = np.load("Data/emnist-byclass-balanced.npz")
+    data_path = os.path.join(project_root, "Data", "emnist-byclass-balanced.npz")
+    data = np.load(data_path)
     labels = data['labels']
     for label in labels:
         counts[label] += 1
