@@ -26,7 +26,7 @@ The goal of this project is to investigate how convolutional kernel size affects
 
 ## Purpose Statment
 
-##### How does convolutional kernel size affect handwritten charecter recognition accuracy?
+#### How does convolutional kernel size affect handwritten charecter recognition accuracy?
 
 ## Hypothesis
-##### If the kernel size of a convolutional neural network is 4x4, it will achieve the highest accuracy because smaller kernels capture very local features but may miss larger patterns, while larger kernels can blur finer details.
+#### If the kernel size of a convolutional neural network is 4x4, it will achieve the highest accuracy because smaller kernels capture very local features but may miss larger patterns, while larger kernels can blur finer details.
