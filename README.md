@@ -1,76 +1,32 @@
-# Science Fair 2025
-### By Om Kanabar
-## LICENSE NOTE
-Please review the LICENSE file to understand the terms and conditions for using this project.
+# The Effect of Convolutional Kernel Size on Handwritten Character Recognition Accuracy
+### By: Om Kanabar
 
-## TOOLS NOTE
-This project was made using [Visual Studio Code](https://code.visualstudio.com/) on **MacOS** *Tahoe (26.1)* with a **2022** *M2* MacBookAir with 16 GB of RAM, times may vary with different computers.
+*This project is distributed under a separate license agreement. By using, copying, modifying, or distributing any part of this repository, you agree to the terms and conditions of that license.*
+
+## A few key terms
+
+1. **Neural Network**: A neural network is a computer program that is based on the human brain. This works by learning patterns from data. A neural network modifies its connections to learn. A neural network can recognize images or understand speech, or even make a prediction. Each hidden layer in the neural network will perform a mathematical operation to help it make its prediction. (See Fig 1)
+
+![Neural Network Visualization](Assets/NeuralNetworkVisualization.png "Neural Network Visualization")
+---
+Fig. 1 Neural Network Visualization.
 
 ---
-## A bit about the structure of this project
-```ScienceFair2025/Learning```, the learning folder contains practice scripts and experiments, showing the process of exploration and how the final project was developed from these experiments.
 
-```ScienceFair2025/Data```, where data (other than EMINST ByClass) is stored.
+2. **Convolutional Neural Network (CNN)**: A type of neural network that is designed to for images. It is preferred for image tasks due to it processing images using layers that detect patterns like edges, shapes, and textures.
 
-```ScienceFair2025/Scripts```, where the non-neural-network essential scripts are stored.
+3. **Kernel**: A small array of numbers that is also known as a filter, it moves across an image in a CNN in order to spot patterns or edges, or shapes. This kernel’s size will determine just how much of an image is processed at one given point in order to detect detailed or large features.
 
-```ScienceFair2025/Models```, where the best models are stored. 
----
+## A bit about this project
 
-## Goal of Project
-The goal of the project is to make a lightweight convoluted neural network in Python for recognizing handwritten characters (A-Z, 0-9). It will be trained on the EMNIST Byclass dataset. 
+This project deals with how the kernel size changes affect the accuracy of CNN's which are made for recognizing handwritten characters using the EMINST byclass dataset. This experiment intends to find out how different kernel sizes influence learning efficiency and classification performances since several models will be trained with different kernel sizes.
 
----
-## Overview
-## Experimental Design (draft)
-- Control group: 3×3 kernel
-- Experimental group: 2×2, 4×4, 5×5 kernels
-- Train 3 networks per kernel size
-- Run 3 trials per network
-- (Results will be logged in CSV)
-2. **DV:** Model Performance Score = `accuracy / (accuracy + (0.75 • inference_time))`
+## Objective/Purpose
+The goal of this project is to investigate how convolutional kernel size affects the accuracy and learning efficiency of CNNs trained on handwritten character data
 
----
-# Instructions for Rerunning the Project
+## Purpose Statment
 
-## ERROR NOTE
+##### How does convolutional kernel size affect handwritten charecter recognition accuracy?
 
-If any errors are found please create an issue at: https://github.com/om-kanabar/ScienceFair2025/issues/ if you are not able to do that please contact Om Kanabar at https://omkanabar.com/contact 
-
-## Before Starting 
-
-### Installing Requirements Before Starting Project
-
-Before running the project, make sure you have Python 3 installed.
-
-1. Open the terminal **in the project folder**:
-   - In Finder, right‑click the project folder and select **"New Terminal at Folder"**, *or*
-   - Open Terminal and type `cd`, then **drag the ScienceFair2025 folder into the Terminal window** and press Enter.
-
-2. Create and activate a virtual environment (optional but recommended):
-
-   ```python -m venv venv```
-   ```source venv/bin/activate```
-
-3. Install all required packages:
-
-   ```pip install -r requirements.txt```
-
-### Check for corrupted data
-
-1. Open the terminal **in the project folder**:
-   - In Finder, right‑click the project folder and select **"New Terminal at Folder"**, *or*
-   - Open Terminal and type `cd` , then **drag the ScienceFair2025 folder into the Terminal window** and press Enter.
-
-2. Run the file 
-#### (Images can be flipped and rotated. This is *normal* and not an issue)
-
-```python3 Scripts/datacheck.py```
-
-3. **Wait for the dataset to load**
-
-4. Follow in-terminal instructions
-
-### 
-
-
+## Hypothesis
+##### If the kernel size of a convolutional neural network is 4x4, it will achieve the highest accuracy because smaller kernels capture very local features but may miss larger patterns, while larger kernels can blur finer details.
