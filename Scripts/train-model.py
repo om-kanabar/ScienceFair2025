@@ -114,5 +114,5 @@ history = model.fit(
 
 console.print("[bold green]Training complete![/bold green]")
 
-model.save(f"Models/model_{kernel_size[0]}x{kernel_size[1]}_{unique_id}.h5")
-console.print(f"[bold green]Model saved as model_{kernel_size[0]}x{kernel_size[1]}_{unique_id}.h5[/bold green]")
+model.save(f"Models/model_{kernel_size[0]}x{kernel_size[1]}_{unique_id}.keras")
+console.print(f"[bold green]Model saved as model_{kernel_size[0]}x{kernel_size[1]}_{unique_id}.keras[/bold green]")
