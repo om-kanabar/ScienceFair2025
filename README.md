@@ -46,4 +46,10 @@ The goal of this project is to investigate how convolutional kernel size affects
 
 1. Download the repository by going to https://github.com/om-kanabar/ScienceFair2025/archive/refs/heads/main.zip
 2. Unzip the file by clicking on it
-3. 
+3. Open it in Visual Code Studio (VCS)
+- If you don't have VCS download it here: https://code.visualstudio.com/
+4. Press Ctrl + `
+5. Type `python -m venv venv` and hit enter to create a virtual environment
+6. To activate the virual environment type `source venv/bin/activate` and hit enter 
+7. To install the necessary packages type `pip install -r requirements.txt`
+
