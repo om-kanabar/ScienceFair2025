@@ -3,7 +3,7 @@
 
 *This project is distributed under a separate license agreement. By using, copying, modifying, or distributing any part of this repository, you agree to the terms and conditions of that license.*
 
-## A few key terms
+## A Few Key Terms Before We Start
 
 1. **Neural Network**: A neural network is a computer program that is based on the human brain. This works by learning patterns from data. A neural network modifies its connections to learn. A neural network can recognize images or understand speech, or even make a prediction. Each hidden layer in the neural network will perform a mathematical operation to help it make its prediction. (See Fig 1)
 
