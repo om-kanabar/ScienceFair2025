@@ -13,6 +13,7 @@ from tensorflow import keras
 import uuid
 from sklearn.model_selection import train_test_split
 import os
+import random
 script_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.abspath(os.path.join(script_dir, ".."))
 data_path = os.path.join(project_root, "Data", "emnist-byclass-balanced.npz")
@@ -93,27 +94,40 @@ x_train, x_val, y_train, y_val = train_test_split(
     train_images,
     train_labels,
     test_size=0.1,
-    random_state=42
+    random_state=random.randint(1,50)
 )
-
 console.print(f"[green]Training samples: {len(x_train)}, Validation samples: {len(x_val)}[/green]")
+
+# Augment training data by adding Gaussian noise
+console.print("[bold cyan]Augmenting training data with Gaussian noise...[/bold cyan]")
+noise_factor = 0.1
+# Generate Gaussian noise
+noise = noise_factor * np.random.normal(loc=0.0, scale=1.0, size=x_train.shape)
+# Create noisy images by adding noise and clipping to [0,1]
+x_train_noisy = np.clip(x_train + noise, 0., 1.)
+# Concatenate original and noisy images
+x_train_augmented = np.concatenate((x_train, x_train_noisy), axis=0)
+# Duplicate labels for noisy images
+y_train_augmented = np.concatenate((y_train, y_train), axis=0)
+
+console.print(f"[green]Training data augmented: {len(x_train_augmented)} samples total.[/green]")
 
 console.print("[bold cyan]Training started...[/bold cyan]")
 
 # Add early stopping callback to prevent overfitting
 early_stopping = keras.callbacks.EarlyStopping(
     monitor='val_loss',      # what to watch
-    patience=3,              # stop if no improvement for 3 epochs
+    patience=2,              # stop if no improvement for 3 epochs
     restore_best_weights=True  # revert to the best model
 )
 
 # Trains the neural network
 
 history = model.fit(
-    x_train,
-    y_train,
+    x_train_augmented,
+    y_train_augmented,
     validation_data=(x_val, y_val),
-    epochs=20,            # maximum number of epochs
+    epochs=15,            # maximum number of epochs
     batch_size=64,
     callbacks=[early_stopping]
 )

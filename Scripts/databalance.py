@@ -32,15 +32,25 @@ for image, label in tfds.as_numpy(train_dataset):
     char = mapping[label]
     images_by_class[char].append(image)
 
-# Define the target number of samples per class for oversampling
-target = 20000
+# Define a custom target distribution for oversampling each class with randomized targets
+target_distribution = {}
+for char in images_by_class:
+    if char.isdigit():
+        target_distribution[char] = random.randint(20000, 25000)
+    elif char.isupper():
+        target_distribution[char] = random.randint(15000, 20000)
+    elif char.islower():
+        target_distribution[char] = random.randint(18000, 22000)
+    else:
+        target_distribution[char] = random.randint(18000, 20000)
 
-# Oversample each class to reach the target number of samples
+# Oversample each class to reach its target number of samples
 for char in images_by_class:
     current_count = len(images_by_class[char])
-    if current_count < 20000:
+    target = target_distribution[char]
+    if current_count < target:
         remaining = target - current_count
-        images_by_class[char].extend(random.choices(images_by_class[char], k = remaining))
+        images_by_class[char].extend(random.choices(images_by_class[char], k=remaining))
     console.print(f"[yellow]Oversampled class '{char}' to {len(images_by_class[char])} samples.[/yellow]")
 
 console.print("[green]Data balancing script completed successfully![/green]")
