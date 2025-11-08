@@ -19,7 +19,7 @@ Fig. 1 Neural Network Visualization.
 
 ## A bit about this project
 
-This project deals with how the kernel size changes affect the accuracy of CNN's which are made for recognizing handwritten characters using the EMINST byclass dataset. This experiment intends to find out how different kernel sizes influence learning efficiency and classification performances since several models will be trained with different kernel sizes.
+This project deals with how the kernel size changes affect the accuracy of CNN's which are made for recognizing handwritten characters using the EMNIST byclass dataset. This experiment intends to find out how different kernel sizes influence learning efficiency and classification performances since several models will be trained with different kernel sizes.
 
 ## Objective/Purpose
 The goal of this project is to investigate how convolutional kernel size affects the accuracy  and learning efficiency of CNNs trained on handwritten character data
@@ -32,15 +32,31 @@ The goal of this project is to investigate how convolutional kernel size affects
 
 ### **DV:** Accuracy (Number of Images Identified Correctly/Total Number of Images)
 
-## Purpose Statment
+## Research Question
 
-#### How does convolutional kernel size affect handwritten charecter recognition accuracy?
+#### How does convolutional kernel size affect handwritten character recognition accuracy?
 
 ## Hypothesis
 #### If the kernel size of a convolutional neural network is 4x4, it will achieve the highest accuracy because smaller kernels capture very local features but may miss larger patterns, while larger kernels can blur finer details.
 
 
-## Materials (Doing Later)
+## Materials
+1. Laptop (> 8 GB of RAM Recommended)
+2. Terminal/Command Prompt
+3. Visual Studio Code
+4. Python
+5. Github
+6. Operating System
+6. `pip`
+7. `Matplotlib`
+8. `Keras`
+9. `Tensorflow`
+10. `Tensorflow Datasets`
+11. `Numpy`
+12. `Console`
+13. `scikit-learn`
+14. EMNIST ByClass Dataset
+15. EMNIST ByClass Mapping
 
 ## Instructions
 
