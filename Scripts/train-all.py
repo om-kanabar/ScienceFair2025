@@ -29,7 +29,7 @@ for kernel in kernel_sizes:
         if process.returncode == 0:
             console.print(f"[green] Completed: Kernel {kernel}x{kernel}, Run {run}/3[/green]\n")
         else:
-            console.print(f"[bold red] Failed: Kernel {kernel}x{kernel}, Run {run}/3[/red]\n")
+            console.print(f"[bold red] Failed: Kernel {kernel}x{kernel}, Run {run}/3\n")
 
         # Pause briefly between runs
         time.sleep(5)

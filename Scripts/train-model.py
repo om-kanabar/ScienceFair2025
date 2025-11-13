@@ -66,12 +66,12 @@ model = keras.models.Sequential([
     keras.layers.Conv2D(32, kernel_size=kernel_size, activation='relu', input_shape=(28,28,1)),
     keras.layers.MaxPooling2D(pool_size=(2,2)),
     keras.layers.Conv2D(64, kernel_size=kernel_size, activation='relu'),
+    keras.layers.Conv2D(128, kernel_size=kernel_size, activation='relu'),
     keras.layers.MaxPooling2D(pool_size=(2,2)),
     keras.layers.Flatten(),
     keras.layers.Dense(128, activation='relu'),
     keras.layers.Dense(num_classes, activation='softmax')
 ])
-
 
 # Compile the model with Adam optimizer and appropriate loss function
 model.compile(
@@ -93,14 +93,14 @@ console.print("[bold cyan]Splitting data into training and validation sets...[/b
 x_train, x_val, y_train, y_val = train_test_split(
     train_images,
     train_labels,
-    test_size=0.1,
+    test_size=0.115,
     random_state=random.randint(1,50)
 )
 console.print(f"[green]Training samples: {len(x_train)}, Validation samples: {len(x_val)}[/green]")
 
 # Augment training data by adding Gaussian noise
 console.print("[bold cyan]Augmenting training data with Gaussian noise...[/bold cyan]")
-noise_factor = 0.1
+noise_factor = 0.05
 # Generate Gaussian noise
 noise = noise_factor * np.random.normal(loc=0.0, scale=1.0, size=x_train.shape)
 # Create noisy images by adding noise and clipping to [0,1]
@@ -117,7 +117,7 @@ console.print("[bold cyan]Training started...[/bold cyan]")
 # Add early stopping callback to prevent overfitting
 early_stopping = keras.callbacks.EarlyStopping(
     monitor='val_loss',      # what to watch
-    patience=2,              # stop if no improvement for 3 epochs
+    patience=3,              # stop if no improvement for 3 epochs
     restore_best_weights=True  # revert to the best model
 )
 
@@ -127,7 +127,7 @@ history = model.fit(
     x_train_augmented,
     y_train_augmented,
     validation_data=(x_val, y_val),
-    epochs=15,            # maximum number of epochs
+    epochs=20,            # maximum number of epochs
     batch_size=64,
     callbacks=[early_stopping]
 )

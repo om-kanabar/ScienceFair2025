@@ -47,6 +47,20 @@ console.print("[green]Data Loaded\n")
 x = x / 255.0
 x = x.reshape(-1, 28, 28, 1)
 
+# Apply Gaussian noise to a subset of test images
+num_samples = x.shape[0]
+num_noisy = int(num_samples * 0.35)  # 35% of samples
+indices = np.random.choice(num_samples, num_noisy, replace=False)
+noise = np.random.normal(loc=0.0, scale=0.15, size=x.shape)
+x_noisy = np.copy(x)
+x_noisy[indices] += noise[indices]
+x_noisy = np.clip(x_noisy, 0.0, 1.0)
+x = x_noisy
+
+console.print("[bold magenta]Note: Gaussian noise is added to help simulate real world.")
+
+console.print(f"[bold cyan]Applied Gaussian noise to {num_noisy} test samples (~35%).\n")
+
 console.print("[bold cyan]Evaluating models...\n")
 
 results = {}
