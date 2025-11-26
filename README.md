@@ -68,4 +68,3 @@ The goal of this project is to investigate how convolutional kernel size affects
 5. Type `python -m venv venv` and hit enter to create a virtual environment
 6. To activate the virual environment type `source venv/bin/activate` and hit enter 
 7. To install the necessary packages type `pip install -r requirements.txt`
-
