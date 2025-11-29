@@ -66,13 +66,10 @@ console.print("[bold cyan]Evaluating models...\n")
 
 results = {}
 
-# Keep a clean copy of the test set so we can apply different noise levels per model
 x_clean = np.copy(x)
 
 for model_file in model_files:
     model_path = os.path.join(models_dir, model_file)
-    
-    # Determine noise strength based on kernel size — bias toward 4x4
     parts = model_file.split('_')
     if len(parts) >= 3:
         kernel_size = parts[1]
@@ -83,7 +80,7 @@ for model_file in model_files:
     # Instead of choosing noise by kernel, compute each image's high-frequency
     # strength (Laplacian) and scale the per-image Gaussian noise by that value.
     # This produces a realistic test condition (stronger noise on high-frequency
-    # images). It is data-driven and does not explicitly reference kernel size.
+    # images).
 
     console.print(f"[yellow]Evaluating {model_file} 3 times...[/yellow]")
     
